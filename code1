@@ -1,0 +1,28 @@
+#Assuming that there are no emojis and numerals in the input data
+a = input("Enter a statement to be printed: ")
+a=a.lower()
+b = (a.split())
+
+stop_words = ['this', 'is', 'a', 'on']
+x=[]
+for i in b:
+        if i not in stop_words:
+            x.append(i)
+print (x)
+
+#Calculating polarity using a dictionary
+pol_dict ={
+    'good': 0,
+    'bi': 0.5,
+    'class': 0.5,
+    'python': 0.5,
+    'bad': 1,
+    'poor': 1,
+    'nice': 0,    
+}
+
+str_pol=0
+for i in x:
+    str_pol += pol_dict[i]
+print (str_pol/len(x))
+    
